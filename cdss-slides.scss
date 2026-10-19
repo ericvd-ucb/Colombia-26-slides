@@ -1,0 +1,210 @@
+/*-- scss:defaults --*/
+
+// CDSS slide theme for Quarto reveal.js
+// Consolidated from the Amsterdam (LAB42) deck, October 2026.
+// Use:  format: revealjs: theme: [default, cdss-slides.scss]
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+// Dark-blue ramp: one family, darkest to lightest
+$navy:            #061436;   // title background, headings, dark fills
+$berkeley-blue:   #002676;   // official Berkeley Blue, second step
+$blue-700:        #134A7C;
+$blue-600:        #2A6496;
+$founders-rock:   #3B7EA1;   // links, secondary accents
+$blue-300:        #7FA7C9;
+
+// Accents
+$california-gold: #FDB515;   // rules, borders, callout edges
+$accent-orange:   #F58B1F;   // kickers, bullet markers, goal outlines
+
+// Neutrals
+$ink:     #1F2937;
+$slate:   #374151;
+$muted:   #6B7280;
+$hairline:#E5E7EB;
+$soft-bg: #F4F6FA;
+$paper:   #FFFFFF;
+
+// Soft semantic tints (use sparingly, for contrasting outcomes)
+$tint-gold: #FFF4D6;
+$tint-red:  #FBECEC;
+$text-red:  #8A1C1C;
+
+// Typography
+$font-family-sans-serif: "Inter", "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace:  "JetBrains Mono", Menlo, monospace;
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-font-weight: 800;
+$presentation-heading-color: $navy;
+$presentation-heading-text-transform: none;
+$presentation-heading-letter-spacing: -0.025em;
+$presentation-font-size-root: 34px;
+$presentation-h2-font-size: 1.5em;
+$presentation-h3-font-size: 1.1em;
+
+// Colors
+$body-bg: $paper;
+$body-color: $ink;
+$link-color: $founders-rock;
+$code-block-bg: $soft-bg;
+$code-block-border-color: $hairline;
+$code-color: $navy;
+$selection-bg: $california-gold;
+
+// Mermaid
+$mermaid-font-family: $font-family-sans-serif;
+$mermaid-node-bg-color: $soft-bg;
+$mermaid-node-fg-color: $navy;
+$mermaid-edge-color: $founders-rock;
+$mermaid-fg-color: $navy;
+$mermaid-label-bg-color: $paper;
+
+/*-- scss:rules --*/
+
+// ---------- Base ----------
+.reveal h1, .reveal h2 { font-weight: 800; letter-spacing: -0.025em; }
+.reveal h2 { line-height: 1.12; margin-bottom: 0.15em; }
+.reveal h3 { color: $navy; margin-bottom: 0.3em; }
+.reveal ul li::marker { color: $accent-orange; }
+.reveal li { margin-bottom: 0.3em; }
+.reveal strong { color: inherit; }
+
+// Footer: shown on the title slide only
+.reveal .footer { font-size: 0.45em; }
+.reveal:not(:has(.title-dark.present)) .footer { display: none !important; }
+.reveal:has(.title-dark.present) .footer { color: rgba(255,255,255,0.7); }
+.reveal .slide-number { color: $navy; background: transparent; }
+
+// ---------- Title slide ----------
+// ## Title {.title-dark background-color="#061436"}
+.reveal .title-dark { text-align: center; color: $paper; }
+.reveal .title-dark h2 { color: $paper; font-size: 1.9em; line-height: 1.1; }
+.reveal .title-dark .subtitle { display: block; color: $california-gold; font-size: 1.1em; margin-bottom: 1em; }
+.reveal .title-dark .byline { font-size: 0.75em; color: rgba(255,255,255,0.85); }
+.reveal .title-dark .byline a { color: $california-gold; }
+.reveal .title-dark .title-logos { display: flex; justify-content: center; align-items: center; gap: 70px; margin-top: 1.2em; }
+.reveal .title-dark .title-logos p { margin: 0; }
+.reveal .title-dark .title-logos img { margin: 0; height: 46px; width: auto; }
+.reveal .title-dark .title-logos .cdss-logo { filter: brightness(0) invert(1); }
+
+// Section divider: ## Part 2 {.section-dark background-color="#061436"}
+.reveal .section-dark h2 { color: $paper; font-size: 2em; }
+.reveal .section-dark .kicker { color: $california-gold; font-size: 0.6em; }
+.reveal .section-dark p { color: rgba(255,255,255,0.85); }
+
+// ---------- Text elements ----------
+// Small orange label under the title, naming the part of the talk
+.reveal .kicker { display: block; font-size: 0.5em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: $accent-orange; margin-bottom: 0.4em; }
+// Lead sentence, larger and semibold
+.reveal .statement { font-size: 0.95em; font-weight: 600; line-height: 1.3; margin-top: 0.6em; color: $ink; }
+// Supporting note with a gold left edge
+.reveal .statement-2 { font-size: 0.7em; line-height: 1.35; color: $slate; margin-top: 0.8em; padding-left: 0.6em; border-left: 4px solid $california-gold; }
+// Sources, captions, credits
+.reveal .caption { display: block; font-size: 0.5em; color: $muted; text-align: center; }
+.reveal .caption.left { text-align: left; }
+// Smaller body text for dense slides
+.reveal .compact { font-size: 0.75em; }
+
+// ---------- Callouts ----------
+// Navy banner with gold edge: the slide's main point
+.reveal .big-idea { background: $navy; color: $paper; padding: 0.6em 0.9em; border-left: 10px solid $california-gold; border-radius: 6px; font-weight: 600; font-size: 0.8em; margin-top: 0.5em; }
+.reveal .big-idea p { margin: 0; }
+// Light callout with gold edge: a question, takeaway or quotation
+.reveal .bottom-question { margin-top: 0.5em; padding: 0.35em 0.7em; border-left: 6px solid $california-gold; background: $soft-bg; font-size: 0.62em; }
+.reveal .bottom-question p { margin: 0; }
+// Grey box, for paired or contrasting statements
+.reveal .contrast { padding: 12px 18px; background: $soft-bg; border-radius: 8px; font-size: 0.62em; margin-bottom: 14px; }
+.reveal .contrast p { margin: 0; }
+
+// ---------- Images ----------
+.reveal img.shot { border: 1px solid $hairline; border-radius: 8px; box-shadow: 0 6px 20px rgba(6,20,54,0.15); }
+.reveal h2 img.title-logo { height: 1.3em; width: auto; vertical-align: middle; margin: 0 0 0 0.3em; }
+.reveal img.center-logo { display: block; height: 190px; width: auto; margin: 0.8em auto 0; }
+
+// ---------- Cards: three (or two, four) columns with gold top edge ----------
+// ::: {.cards} wrapping a :::: {.columns}
+.reveal .cards .columns { display: flex !important; gap: 18px; align-items: stretch; margin-top: 0.5em; }
+.reveal .cards .columns > .column { flex: 1; width: auto !important; box-sizing: border-box; background: $soft-bg; border-top: 6px solid $california-gold; border-radius: 8px; padding: 18px 22px; font-size: 0.6em; line-height: 1.4; }
+.reveal .cards .column h3 { font-size: 1.3em; color: $navy; margin: 0 0 0.4em; }
+.reveal .cards .column p { margin: 0 0 0.4em; }
+
+// ---------- Vertical flow (process or stack, top to bottom) ----------
+// ::: {.flow .flow-navy}  (or .flow-grey for the contrasting / older option)
+.reveal .flow-label { display: block; font-weight: 700; font-size: 0.6em; color: $navy; margin-bottom: 0.4em; }
+.reveal .flow ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.reveal .flow li { position: relative; margin: 0; padding: 6px 16px; border-radius: 8px; font-size: 0.55em; line-height: 1.25; min-width: 260px; }
+.reveal .flow li + li::before { content: "↓"; position: absolute; top: -22px; left: 22px; height: 22px; line-height: 22px; font-size: 16px; color: #8a94a6; }
+.reveal .flow-compact ul { gap: 14px; }
+.reveal .flow-compact li { padding: 3px 14px; font-size: 0.46em; }
+.reveal .flow-compact li + li::before { top: -12px; height: 12px; line-height: 12px; font-size: 11px; }
+.reveal .flow-grey li { background: #EEF0F3; color: $slate; }
+.reveal .flow-navy li { background: $navy; color: $paper; }
+// Outcome box under a flow
+.reveal .outcome { display: block; margin-top: 22px; padding: 10px 16px; border-radius: 8px; font-size: 0.58em; }
+.reveal .outcome-grey { background: $tint-red; color: $text-red; }
+.reveal .outcome-navy { background: $tint-gold; color: $navy; border-left: 6px solid $california-gold; }
+
+// ---------- Horizontal flow (sequence, left to right) ----------
+.reveal .hflow ul { list-style: none; margin: 0.3em 0 0.6em; padding: 0; display: flex; align-items: center; flex-wrap: wrap; }
+.reveal .hflow li { margin: 0; padding: 8px 20px; border-radius: 8px; background: $navy; color: $paper; font-weight: 600; font-size: 0.6em; }
+.reveal .hflow li + li { margin-left: 44px; position: relative; }
+.reveal .hflow li + li::before { content: "→"; position: absolute; left: -36px; color: $accent-orange; }
+
+// ---------- Chips: grid of short items ----------
+.reveal .chips ul { list-style: none; margin: 0.4em 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.reveal .chips.three ul { grid-template-columns: repeat(3, 1fr); }
+.reveal .chips li { margin: 0; padding: 14px 16px; border-radius: 8px; background: $soft-bg; border-top: 5px solid $founders-rock; font-size: 0.55em; font-weight: 600; color: $navy; }
+
+// ---------- Stairs: three rising steps (levels, stages, tiers) ----------
+.reveal .stairs { display: flex; align-items: flex-end; gap: 18px; height: 440px; margin-top: 0.2em; }
+.reveal .stairs .rung { flex: 1; box-sizing: border-box; padding: 16px 20px; border-radius: 10px; font-size: 0.55em; line-height: 1.35; color: $paper; }
+.reveal .stairs .rung p { margin: 0.35em 0; }
+.reveal .stairs .rung h3 { color: $paper; font-size: 1.45em; margin: 0; }
+.reveal .stairs .r1 { height: 60%; background: $founders-rock; }
+.reveal .stairs .r2 { height: 80%; background: $blue-700; }
+.reveal .stairs .r3 { height: 100%; background: $navy; }
+.reveal .stairs .rung-num { display: block; font-size: 2em; font-weight: 800; color: $california-gold; line-height: 1; }
+.reveal .stairs .rung-tech { display: block; font-weight: 600; color: $california-gold; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8em; margin-bottom: 0.4em; }
+
+// ---------- Layer stack: architecture, top layer lightest ----------
+.reveal .build-wrap { display: flex; gap: 28px; align-items: stretch; margin-top: 0.3em; }
+.reveal .build-stack { flex: 0 0 56%; display: flex; flex-direction: column; gap: 7px; }
+.reveal .build-stack .layer { padding: 12px 22px; border-radius: 8px; font-size: 0.6em; color: $paper; }
+.reveal .build-stack .layer p { margin: 0; }
+.reveal .build-stack .l6 { background: $california-gold; color: $navy; }
+.reveal .build-stack .l5 { background: $blue-300; }
+.reveal .build-stack .l4 { background: $founders-rock; }
+.reveal .build-stack .l3 { background: $blue-600; }
+.reveal .build-stack .l2 { background: $blue-700; }
+.reveal .build-stack .l1 { background: $navy; }
+.reveal .build-stack .goal { outline: 4px solid $accent-orange; outline-offset: 3px; }
+.reveal .build-side { flex: 1; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.62em; line-height: 1.35; }
+.reveal .build-side p { margin: 0; }
+.reveal .build-side .goal-note { border-left: 6px solid $accent-orange; padding-left: 14px; }
+
+// ---------- Tables ----------
+.reveal table { font-size: 0.6em; }
+.reveal table th { color: $navy; border-bottom: 2px solid $navy; }
+
+// ---------- One-off slide tweaks ----------
+// Profile slide: text left, portrait screenshot right, capped so the caption fits
+.reveal .profile-slide img.shot { max-height: 470px; width: auto; display: block; margin: 0 auto; }
+
+// Logo row: small project logos spread across the slide, e.g. under a callout
+// ::: {.logo-row} with images on consecutive lines; add .logo-sm to a tall wordmark
+.reveal .logo-row p { display: flex; justify-content: space-between; align-items: center; margin: 0.7em 0 0; }
+.reveal .logo-row img { height: 62px; width: auto; margin: 0; }
+.reveal .logo-row img.logo-sm { height: 44px; }
+
+// Stat cards: ::: {.cards .stats} with the number as each card's ### heading
+.reveal .stats .column h3 { font-size: 2.2em; line-height: 1.1; margin: 0 0 0.3em; }
+
+// Photo pair: two images side by side, e.g. event photos in a column
+// ::: {.photo-pair} with both images on consecutive lines
+.reveal .photo-pair p { display: flex; gap: 10px; margin: 0; }
+.reveal .photo-pair img { flex: 1; min-width: 0; width: 50%; height: auto; margin: 0; border-radius: 8px; }
+
+// GitHub numbers slide: stat cards as a 2 x 2 grid beside the photos
+.reveal .ghnum-slide .stats .columns { display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 0.2em; }
+.reveal .ghnum-slide .stats .columns > .column { padding: 12px 18px; }
