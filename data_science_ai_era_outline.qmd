@@ -1,5 +1,5 @@
 ---
-title: "Data Science Education and Workforce Preparation in the AI Era"
+title: "Data Science Education in the AI Era"
 author: "Eric Van Dusen"
 date: "October 2026"
 format:
@@ -12,9 +12,9 @@ format:
       data-visibility: hidden
 ---
 
-## Data Science Education and Workforce Preparation in the AI Era {.title-dark background-color="#061436"}
+## Data Science Education in the AI Era {.title-dark background-color="#061436"}
 
-[What transfers as AI changes the workplace]{.subtitle}
+[Data Science in the AI Era: How AI changes the workplace]{.subtitle}
 
 ::: {.byline}
 **Eric Van Dusen**<br>
