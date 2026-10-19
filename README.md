@@ -6,8 +6,11 @@ Slides for a talk at Universidad Externado, Bogotá, October 2026. Eric Van Duse
 
 Press `S` for speaker notes, `F` for full screen.
 
+**PDF:** [data_science_ai_era_outline.pdf](data_science_ai_era_outline.pdf)
+
 - `data_science_ai_era_outline.qmd`: the deck (Quarto reveal.js)
 - `data_science_ai_era_outline.html`: rendered, self-contained slides
+- `data_science_ai_era_outline.pdf`: PDF of the slides, one per page
 - `cdss-slides.scss`: theme
 - `CLAUDE.md`: style and voice rules for the deck
 - `images/`: logos and screenshots used in the deck
