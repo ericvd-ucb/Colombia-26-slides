@@ -208,3 +208,13 @@ $mermaid-label-bg-color: $paper;
 // GitHub numbers slide: stat cards as a 2 x 2 grid beside the photos
 .reveal .ghnum-slide .stats .columns { display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 0.2em; }
 .reveal .ghnum-slide .stats .columns > .column { padding: 12px 18px; }
+
+// QR column: QR code with a short label and link, e.g. ::: {.column .lite-qr}
+.reveal .lite-qr { text-align: center; font-size: 0.6em; }
+.reveal .lite-qr img { width: 78%; max-width: 280px; height: auto; margin: 0.2em auto 0.3em; display: block; }
+.reveal .lite-qr p { margin: 0.2em 0; }
+.reveal .lite-slide img.lite-logo { height: 54px; width: auto; margin: 0 0 0.3em; }
+.reveal .lite-slide li { font-size: 0.8em; margin-bottom: 0.15em; }
+
+// Chart slide: one full-width figure with caption and takeaway
+.reveal .chart-slide img { width: 100%; height: auto; margin: 0.2em 0 0; }
